@@ -1,2 +1,2 @@
 # Notera
-BLM4581 &amp; BLM4587 Dersleri Kapmasında Yapacağımız Proje 
+BLM4581 Ağ Tabanlı Teknolojiler ve Uygulamaları Dersi Kapmasında Yapacağımız Proje 
