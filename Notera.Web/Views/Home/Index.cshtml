@@ -2,19 +2,118 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center mt-5">
-    <h1 class="display-3">Notera</h1>
+<style>
+    .notera-hero {
+        border-bottom: 1px solid #D1DBBD;
+        padding: 3rem 0;
+    }
+    .notera-badge {
+        display: inline-block;
+        background-color: #D1DBBD;
+        color: #193441;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.35rem 0.75rem;
+        border-radius: 4px;
+    }
+    .btn-notera-primary {
+        background-color: #193441;
+        border-color: #193441;
+        color: #FCFFF5;
+    }
+    .btn-notera-primary:hover,
+    .btn-notera-primary:focus {
+        background-color: #3E606F;
+        border-color: #3E606F;
+        color: #FCFFF5;
+    }
+    .btn-notera-outline {
+        background-color: transparent;
+        border: 1px solid #3E606F;
+        color: #193441;
+    }
+    .btn-notera-outline:hover,
+    .btn-notera-outline:focus {
+        background-color: #D1DBBD;
+        border-color: #3E606F;
+        color: #193441;
+    }
+    .notera-recognize-box {
+        background-color: #D1DBBD;
+        border: 1px solid #91AA9D;
+        border-radius: 8px;
+        padding: 2rem;
+    }
+    .notera-step-item {
+        border-left: 3px solid #91AA9D;
+        padding-left: 1rem;
+    }
+</style>
 
-    <p class="lead">
-        Müziği keşfet, notalarını bul.
-    </p>
+<section class="notera-hero">
+    <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-8">
+            <span class="notera-badge mb-3">Müzik Tanıma ve Enstrüman Nota Arşivi</span>
+            <h1 class="display-5 fw-bold mb-3" style="color: #193441;">
+                Dinlediğin müziği tanı, enstrüman notalarına doğrudan ulaş.
+            </h1>
+            <p class="lead mb-4" style="color: #3E606F;">
+                Notera; kısa ses kayıtlarıyla şarkıları tanımlayan, kütüphanedeki kayıtlarla eşleştiren ve
+                farklı enstrümanlara ait nota içeriklerini tek yerde sunan web platformudur.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="#muzigi-tani" class="btn btn-notera-primary btn-lg px-4">Müziği Tanı</a>
+                <a href="/Songs" class="btn btn-notera-outline btn-lg px-4">Şarkıları İncele</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <p>
-        Dinlettiğiniz müziği tanıyın ve desteklenen enstrümanlara ait
-        nota içeriklerine kolayca ulaşın.
-    </p>
+<section class="py-4">
+    <div class="row g-4">
+        <div class="col-12 col-md-4">
+            <div class="notera-step-item">
+                <h2 class="h6 fw-bold mb-1">1. Şarkıyı Tanımla</h2>
+                <p class="small mb-0" style="color: #3E606F;">
+                    Kısa bir ses kaydı göndererek çalan eserin adını ve sanatçısını belirle.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="notera-step-item">
+                <h2 class="h6 fw-bold mb-1">2. Arşivde Eşleştir</h2>
+                <p class="small mb-0" style="color: #3E606F;">
+                    Tanınan şarkının sistemdeki kaydını ve YouTube bağlantısını görüntüle.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="notera-step-item">
+                <h2 class="h6 fw-bold mb-1">3. Notalara Ulaş</h2>
+                <p class="small mb-0" style="color: #3E606F;">
+                    Şarkıya tanımlı enstrüman notalarını detay sayfası üzerinden incele.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <button class="btn btn-primary mt-3">
-        Müziği Tanı
-    </button>
-</div>
+<section id="muzigi-tani" class="py-3">
+    <div class="notera-recognize-box">
+        <div class="row align-items-center g-3">
+            <div class="col-12 col-lg-8">
+                <h2 class="h4 fw-bold mb-2" style="color: #193441;">Müzik Tanıma Alanı</h2>
+                <p class="mb-2" style="color: #193441;">
+                    Kısa bir ses örneği yükleyerek şarkıyı veritabanımızda arama özelliği hazırlanmaktadır.
+                </p>
+                <p class="small mb-0" style="color: #3E606F;">
+                    Durum: AudD API ses tanıma servisi bir sonraki geliştirme adımında bağlanacaktır. Şimdilik kayıtlı şarkılara
+                    kütüphane üzerinden doğrudan erişebilirsiniz.
+                </p>
+            </div>
+            <div class="col-12 col-lg-4 text-lg-end">
+                <a href="/Songs" class="btn btn-notera-primary px-4">Kayıtlı Şarkılara Git</a>
+            </div>
+        </div>
+    </div>
+</section>

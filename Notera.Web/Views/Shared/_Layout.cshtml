@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,47 +8,91 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Notera.Web.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #FCFFF5;
+            color: #193441;
+        }
+        .notera-navbar {
+            background-color: #193441;
+            border-bottom: 2px solid #3E606F;
+        }
+        .notera-navbar .navbar-brand {
+            color: #FCFFF5;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .notera-navbar .navbar-brand:hover,
+        .notera-navbar .navbar-brand:focus {
+            color: #D1DBBD;
+        }
+        .notera-navbar .nav-link {
+            color: #D1DBBD;
+            font-weight: 500;
+        }
+        .notera-navbar .nav-link:hover,
+        .notera-navbar .nav-link:focus {
+            color: #FCFFF5;
+        }
+        .notera-navbar .navbar-toggler {
+            border-color: #91AA9D;
+        }
+        .notera-footer {
+            background-color: #FCFFF5;
+            border-top: 1px solid #D1DBBD;
+            color: #3E606F;
+        }
+        .notera-footer a {
+            color: #193441;
+            text-decoration: none;
+        }
+        .notera-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
-<body>
-    <title>@ViewData["Title"] - Notera.Web</title>
+<body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark notera-navbar mb-4">
+            <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Notera</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç/kapat">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav ms-auto gap-sm-2">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                               asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" href="/Songs">Şarkılar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#muzigi-tani">Müziği Tanı</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="container flex-grow-1">
+        <main role="main" class="pb-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Notera.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="notera-footer py-3 mt-auto">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+            <span>&copy; 2026 - Notera Müzik ve Nota Platformu</span>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>
